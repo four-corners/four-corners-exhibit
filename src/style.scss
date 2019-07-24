@@ -1,5 +1,7 @@
 html, body {
-	font-family: Helvetica, sans-serif;
+	font-family: Times, serif;
+	font-size: 20px;
+	line-height: 1.4em;
 }
 
 main {
@@ -8,7 +10,7 @@ main {
 	min-width: 480px;
 	max-width: 1000px;
 	display: table;
-	margin: auto;
+	margin: 4rem auto;
 }
 
 .photo-post {
@@ -17,6 +19,17 @@ main {
 	display: flex;
 }
 
+h2, h3, p {
+	width: 60%;
+	margin: 0 auto 1rem auto;
+}
+
+h2 {
+	font-size: 40px;
+	line-height: 1.2em;
+	margin-bottom: 2rem;
+}
+
 .fc-embed {
-	margin: auto;
+	margin: 4rem auto 4rem auto;
 }
