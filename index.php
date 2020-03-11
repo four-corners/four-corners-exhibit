@@ -14,32 +14,34 @@ global $post;
 ?>
 
 <main id="main" class="site-main">
-
+	
 	<?php
 
 	$query = new WP_Query( array(
-		'post_type' => 'photo'
+		'post_type' => 'page'
 	) );
 
 	if ( $query->have_posts() ) {
 		while ( $query->have_posts() ) {
-			$query->the_post();
+			$query->the_post(); ?>
 
-			echo '<div class="photo-post">';
+			<div class="page-link">
 
-				echo the_content();
+				<a href="<?= get_the_permalink(); ?>">
+					<?= get_the_title(); ?>
+				</a>
 
-			echo '</div>';
-		}
+			</div>
 
-	} else {
+		<?php }
 
-		echo "<h2>No photos to exhibit.</h2>";
+	} else { ?>
 
-	}
-	?>
+		<h2>No photos to exhibit.</h2>
 
-</main><!-- .site-main -->
+	<?php } ?>
+
+</main>
 
 <?php
 get_footer();

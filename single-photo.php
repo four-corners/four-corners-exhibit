@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * Template Name: Group
  *
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -15,26 +15,20 @@ global $post;
 
 <main id="main" class="site-main">
 
-	<?php
+	<div class="photo-post">
 
-	if ( have_posts() ) {
+		<h2><?= $post->post_title; ?></h2>
 
-		while ( have_posts() ) {
+		<div class="photo-content">
 
-			
-			the_post();
-			the_content();
+			<?= $post->post_content; ?>
 
-			
-		}
+		</div>
 
-	} else { ?>
+	</div>
+		
 
-		<h2>Nothing here.</h2>
-
-	<?php } ?>
-
-</main><!-- .site-main -->
+</main>
 
 <?php
 get_footer();

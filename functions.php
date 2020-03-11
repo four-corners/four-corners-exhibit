@@ -47,7 +47,8 @@ function register_photos() {
 			'menu_icon' => 'dashicons-grid-view',
 			'public' => true,
 			'has_archive' => true,
-			'supports' => array('title', 'thumbnail', 'editor')
+			'taxonomies' => array( 'category' ),
+			'supports' => array( 'title', 'thumbnail', 'editor', 'categories' )
 		)
 	);
 }

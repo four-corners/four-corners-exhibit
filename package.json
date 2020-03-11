@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "gulp watch",
+    "build": "gulp build --production"
   },
   "author": "",
   "license": "ISC",
@@ -25,9 +26,5 @@
     "node-sass": "^4.10.0",
     "npm": "^6.9.0",
     "yargs": "^6.6.0"
-  },
-  "scripts": {
-    "watch": "gulp watch",
-    "build": "gulp build --production"
   }
 }

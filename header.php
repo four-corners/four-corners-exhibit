@@ -20,3 +20,17 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<header id="main-header">
+		<a href="<?= get_home_url(); ?>">
+			<h3>Exhibits from the</h3>
+			<h3>Four Corners Project</h3>
+		</a>
+
+		<?php if( $post->post_type == 'page' ) { ?>
+
+			<h3 id="page-title"><?= $post->post_title; ?></h3>
+
+		<?php } ?>
+
+	</header>
