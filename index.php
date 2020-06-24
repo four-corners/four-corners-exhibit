@@ -14,11 +14,12 @@ global $post;
 ?>
 
 <main id="main" class="site-main">
-	
+
 	<?php
 
 	$query = new WP_Query( array(
-		'post_type' => 'page'
+		'post_type' => 'page',
+		'post_status' => 'publish'
 	) );
 
 	if ( $query->have_posts() ) {
