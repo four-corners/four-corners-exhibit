@@ -40,8 +40,8 @@ function register_photos() {
 	register_post_type( 'photo',
 		array(
 			'labels' => array(
-				'name' => __( 'Photos' ),
-				'singular_name' => __( 'Photo' )
+				'name' => __( 'Four Corners Photos' ),
+				'singular_name' => __( 'Four Corners Photo' )
 			),
 			'menu_position' => 4,
 			'menu_icon' => 'dashicons-grid-view',

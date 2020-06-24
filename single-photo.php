@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Group
+ * Template Name: Single
  *
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

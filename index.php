@@ -17,31 +17,33 @@ global $post;
 
 	<?php
 
-	$query = new WP_Query( array(
-		'post_type' => 'page',
-		'post_status' => 'publish'
+	$cats = get_terms( array(
+		'taxonomy' => 'category',
+		'hide_empty' => false,
+		'parent' => 0,
+		'exclude' => 1
 	) );
-
-	if ( $query->have_posts() ) {
-		while ( $query->have_posts() ) {
-			$query->the_post(); ?>
-
-			<div class="page-link">
-
-				<a href="<?= get_the_permalink(); ?>">
-					<?= get_the_title(); ?>
-				</a>
-
+	if ( $cats ) {
+		foreach( $cats as $cat ) { ?>
+			<div class="cat">
+				<a href="<?= get_category_link( $cat ); ?>"><?= $cat->name; ?></a>
+				<?php $sub_cats = get_terms( array(
+					'taxonomy' => 'category',
+					'hide_empty' => false,
+					'parent' => $cat->term_id
+				) );
+				if( $sub_cats ) { ?>
+					<div class="sub-cats">
+						<?php foreach( $sub_cats as $sub_cat ) { ?>
+							<a href="<?= get_category_link( $sub_cat ); ?>"><?= $sub_cat->name; ?></a>
+						<?php } ?>
+					</div>
+				<?php } ?>
 			</div>
-
 		<?php }
-
 	} else { ?>
-
 		<h2>No photos to exhibit.</h2>
-
 	<?php } ?>
-
 </main>
 
 <?php

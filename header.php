@@ -9,6 +9,21 @@
  * @subpackage Four Corners Exhibit
  * @since 1.0.0
  */
+
+$page_title = '';
+if( $post && $post->post_type == 'page' ) {
+	$page_title = $post->post_title;
+} else if( $cat = get_queried_object() ) {
+	if( $cat_parent = $cat->category_parent ) {
+		$page_title = get_term( $cat_parent, 'category' )->name . ': ' . $cat->name;
+	}
+	else {
+		$page_title = $cat->name;
+	}
+}
+
+
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -17,6 +32,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<?php wp_head(); ?>
+	<title>Four Corners Project: <?= $page_title ? $page_title : 'Exhibits'; ?></title>
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,10 +43,6 @@
 			<h3>Four Corners Project</h3>
 		</a>
 
-		<?php if( $post->post_type == 'page' ) { ?>
-
-			<h3 id="page-title"><?= $post->post_title; ?></h3>
-
-		<?php } ?>
+		<h3 id="page-title"><?= $page_title; ?></h3>
 
 	</header>

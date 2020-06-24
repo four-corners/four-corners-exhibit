@@ -61,10 +61,19 @@ header#main-header {
 	opacity: .6;
 }
 
-.page-link {
-	width: 15rem;
-	margin: 0 auto .5rem auto;
+.cat {
+	width: 20rem;
+	margin: 0 auto 1rem auto;
+	padding: 0 0 1rem 0;
 	text-align: center;
+	&:not(:last-child) {
+		border-bottom: 1px dotted #ccc;
+	}
+}
+
+.sub-cats a {
+	font-size: .75rem;
+	margin: 0 .25rem;
 }
 
 .photo-post {

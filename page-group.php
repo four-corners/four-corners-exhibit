@@ -17,6 +17,8 @@ global $post;
 
 	<?php
 	$slug = $post->post_name;
+	$parent_slug = $post->parent_name;
+	echo $parent_slug;
 	$cat = get_category_by_slug( $slug );
 
 	if( $cat ) {
