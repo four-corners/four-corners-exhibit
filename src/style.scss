@@ -24,7 +24,10 @@ h1, h2, h3, h4 {
 
 p {
 	width: 60%;
-	margin: 0 auto 1rem 0;
+	margin: 2rem auto;
+	p + & {
+		margin-top: 1rem;
+	}
 }
 
 h2 {
@@ -92,9 +95,15 @@ header#main-header {
 
 .fc-embed {
 	margin: 0 auto;
+	.page & {
+		margin: 2rem auto 0 auto;
+	}
 }
 .fc-cutline:not(:empty) {
 	margin: 1em auto;
+}
+.fc-credit {
+	display: inline;
 }
 .fc-panel {
 	p {

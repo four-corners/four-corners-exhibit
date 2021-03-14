@@ -95,7 +95,7 @@ function remove_menus(){
 }
 add_action( 'admin_menu', 'remove_menus' );
 
-show_admin_bar( false );
+// show_admin_bar( false );
 
 //////////////////////////////////////////////
 /////////////////////MEDIA////////////////////

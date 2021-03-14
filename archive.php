@@ -15,6 +15,7 @@ get_header();
 	$cat = get_queried_object();
 	$args = array (
 		'post_type' => 'photo',
+		'nopaging' => true,
 		'category' => $cat->term_id,
 	);
 	$photos = get_posts( $args );

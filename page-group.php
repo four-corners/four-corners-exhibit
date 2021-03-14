@@ -18,13 +18,13 @@ global $post;
 	<?php
 	$slug = $post->post_name;
 	$parent_slug = $post->parent_name;
-	echo $parent_slug;
 	$cat = get_category_by_slug( $slug );
 
 	if( $cat ) {
 
 		$photos = get_posts( array(
 			'post_type' => 'photo',
+			'nopaging' => true,
 			'cat' => $cat->term_id
 		) );
 

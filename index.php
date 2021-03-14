@@ -32,7 +32,7 @@ global $post;
 					'hide_empty' => false,
 					'parent' => $cat->term_id
 				) );
-				if( $sub_cats ) { ?>
+				if( $sub_cats && sizeof( $sub_cats ) > 1 ) { ?>
 					<div class="sub-cats">
 						<?php foreach( $sub_cats as $sub_cat ) { ?>
 							<a href="<?= get_category_link( $sub_cat ); ?>"><?= $sub_cat->name; ?></a>
